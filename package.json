@@ -1,0 +1,27 @@
+{
+  "name": "personal-website",
+  "scripts": {
+    "build": "run-s build:ts copy-static",
+    "build:ts": "run-s 'build:ts:*'",
+    "build:ts:server": "tsc -p ./tsconfig.server.json",
+    "build:ts:client": "tsc -p ./tsconfig.client.json",
+    "watch:ts": "run-p 'build:ts:* -- --watch'",
+    "watch:static": "chokidar 'lib/client/**/*.{html,css}' -c 'yarn run copy-static'",
+    "watch": "run-p 'watch:*'",
+    "copy-static": "copyfiles -u 1 'lib/client/**/*.{html,css}' dist"
+  },
+  "dependencies": {
+    "fastify": "^2.14.1",
+    "handlebars": "^4.7.6",
+    "point-of-view": "^3.8.0",
+    "source-map-support": "^0.5.13"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.1",
+    "chokidar-cli": "^2.0.0",
+    "copyfiles": "^2.1.1",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^3.9.2"
+  }
+}
