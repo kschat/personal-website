@@ -1,5 +1,6 @@
 node_modules/
 dist/
+lib/client/scss/vendor
 .DS_Store
 logs
 *.log

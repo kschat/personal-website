@@ -1,0 +1,67 @@
+/* sizes.scss */
+
+// Mobile sizes
+$mobileContainerWidth: 100%;
+$mobileHeaderHeight: 40px;
+$mobileLeftNavWidth: 50px;
+
+// Mobile fonts
+$mobileFontSize: 16px;
+$mobileLineHeight: 24px;
+
+$mobileHeaderFontSize: 18px;
+$mobileHeaderLineHeight: 40px;
+
+$mobileLeftNavFontSize: 11px;
+$mobileLeftNavIconSize: 24px;
+
+$mobileArrowTopSize: 2px;
+$mobileArrowSize: 8px;
+
+$mobilePanelHeaderFontSize: 30px;
+$mobilePanelHeaderLineHeight: 32px;
+
+$mobileLandscapeLeftNavIconSize: 20px;
+$mobileLandscapeLeftNavLineHeight: 28px;
+
+$mobileLandscapeArrowTopSize: 2px;
+$mobileLandscapeArrowSize: 6px;
+
+// Mobile padding
+$mobileSocialLinkPadding: 0 8px;
+$mobilePanelTopPadding: 10px;
+
+// Desktop sizes
+$desktopHeaderHeight: 48px;
+$desktopLeftNavWidth: 60px;
+$desktopLeftNavMinWidth: 170px;
+$desktopLeftNavWidth: 20%;
+$desktopLeftNavMaxWidth: 300px;
+
+// Desktop fonts
+$desktopHeaderFontSize: 22px;
+$desktopHeaderLineHeight: 48px;
+
+$desktopPanelHeaderFontSize: 40px;
+$desktopPanelHeaderLineHeight: 44px;
+
+$desktopFontSize: 22px;
+$desktopLineHeight: 34px;
+$desktopLeftNavFontSize: 18px;
+
+// Desktop padding
+$desktopSocialLinkPadding: 0 14px;
+$desktopPanelTopPadding: 30px;
+
+// z-indexs
+$headerZIndex: 100;
+$leftNavZIndex: 99;
+$panelZIndex: 97;
+$panelOverlayZIndex: 98;
+
+// Media queries
+$mq-small: "only screen and (max-width: 767px)"; // technically shouldn't be used since this site is mobile first
+$mq-small-landscape: "only screen and (max-width: 767px) and (orientation: landscape)";
+$mq-medium: "only screen and (min-width: 768px)";
+$mq-large: "only screen and (min-width: 1225px)";
+$mq-extra-large: "only screen and (min-width: 1500px)";
