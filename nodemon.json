@@ -6,5 +6,5 @@
     "node_modules/**/node_modules"
   ],
   "verbose": true,
-  "ext": "js,json,html"
+  "ext": "js,json,hbs,yml"
 }

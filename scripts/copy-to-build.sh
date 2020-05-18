@@ -20,8 +20,9 @@ cp \
   dist/client/fonts/font-awesome/
 
 copyfiles \
-  -u 1 \
-  'lib/client/scss/**/*' \
-  'lib/server/views/**/*' \
+  --up 1 \
+  'lib/client/scss/**/*.scss' \
+  'lib/server/views/**/*.hbs' \
+  'lib/server/content/**/*.md' \
   dist
 

@@ -1,0 +1,10 @@
+environment: local
+
+services:
+  github:
+    baseUrl: https://raw.githubusercontent.com/kschat/
+
+content:
+  source: LOCAL
+  basePath: ./dist/server/content
+
