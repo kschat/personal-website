@@ -23,6 +23,5 @@ copyfiles \
   --up 1 \
   'lib/client/scss/**/*.scss' \
   'lib/server/views/**/*.hbs' \
-  'lib/server/content/**/*.md' \
   dist
 

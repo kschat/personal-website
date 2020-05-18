@@ -2,9 +2,9 @@ import { join as joinPath, resolve as resolvePath } from 'path';
 import { promises as fs } from 'fs';
 import { Marked } from '@ts-stack/markdown';
 
-import { Logger } from '../types';
-import { getRawFile } from '../service-calls/github/get-raw-file';
-import { AppConfig } from '../config';
+import { Logger } from './types';
+import { getRawFile } from './service-calls/github/get-raw-file';
+import { AppConfig } from './config';
 
 export type ContentSource = 'LOCAL' | 'REMOTE';
 

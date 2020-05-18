@@ -1,6 +1,6 @@
 import { RouteOptions } from 'fastify';
 import { AppConfig } from '../config';
-import { renderContent } from '../content/render-content';
+import { renderContent } from '../render-content';
 
 export type AboutControllerOptions = {
   readonly appConfig: AppConfig;

@@ -6,5 +6,5 @@ services:
 
 content:
   source: LOCAL
-  basePath: ./dist/server/content
+  basePath: ./content
 
