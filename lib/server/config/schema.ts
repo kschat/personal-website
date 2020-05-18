@@ -28,10 +28,16 @@ export const ServicesConfigSchema = t.Record({
   github: GithubConfigSchema,
 } as const);
 
+export type ServerConfig = t.Static<typeof ServerConfigSchema>;
+export const ServerConfigSchema = t.Record({
+  port: t.Number,
+});
+
 export type AppConfig = t.Static<typeof AppConfigSchema>;
 export const AppConfigSchema = t.Record({
   environment: EnvironmentSchema,
   services: ServicesConfigSchema,
   content: ContentConfigSchema,
+  server: ServerConfigSchema,
 } as const);
 

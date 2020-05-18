@@ -8,3 +8,5 @@ content:
   source: LOCAL
   basePath: ./content
 
+server:
+  port: 8080
