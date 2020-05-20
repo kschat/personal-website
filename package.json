@@ -2,7 +2,7 @@
   "name": "personal-website",
   "license": "MIT",
   "scripts": {
-    "build": "run-s build:ts build:scss copy-to-build",
+    "build": "run-s build:ts copy-to-build build:scss",
     "build:ts": "run-s 'build:ts:*'",
     "build:ts:server": "tsc -p ./tsconfig.server.json",
     "build:ts:client": "tsc -p ./tsconfig.client.json",
