@@ -1,226 +1,226 @@
 /* _nav.scss */
 
 %generic-navbar {
-	z-index: $headerZIndex;
-	width: 100%;
-	height: $mobileHeaderHeight;
-	font-size: $mobileHeaderFontSize;
-	line-height: $mobileHeaderLineHeight;
+  z-index: $headerZIndex;
+  width: 100%;
+  height: $mobileHeaderHeight;
+  font-size: $mobileHeaderFontSize;
+  line-height: $mobileHeaderLineHeight;
 }
 
 %generic-navbar-content {
-	position: absolute;
-	left: 0;
-	right: 0;
-	height: $mobileHeaderHeight;
-	padding: 0 6px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: $mobileHeaderHeight;
+  padding: 0 6px;
 }
 
 %generic-nav {
-	display: block;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .navbar {
-	@extend %generic-navbar;
-	position: fixed;
+  @extend %generic-navbar;
+  position: fixed;
 
-	@include transition(height 0.8s ease, font-size 0.8s ease);
+  @include transition(height 0.8s ease, font-size 0.8s ease);
 
-	& .navbar-content {
-		@extend %generic-navbar-content;
+  & .navbar-content {
+    @extend %generic-navbar-content;
 
-		background-color: $headerBackgroundColor;
-		color: $headerColor;
+    background-color: $headerBackgroundColor;
+    color: $headerColor;
 
-		@include transition(height 0.8s ease);
-	}
+    @include transition(height 0.8s ease);
+  }
 
-	& .brand {
-		height: 100%;
-		position: relative;
-		float: left;
+  & .brand {
+    height: 100%;
+    position: relative;
+    float: left;
 
     i {
       padding-right: 6px;
     }
-	}
+  }
 
-	& a,
-	& a:link,
-	& a:visited {
-		display: block;
-		color: $headerColor;
-		border-bottom: 1px solid transparent;
-		@include transition(color 0.8s ease, border-bottom 0.8s ease);
-	}
+  & a,
+  & a:link,
+  & a:visited {
+    display: block;
+    color: $headerColor;
+    border-bottom: 1px solid transparent;
+    @include transition(color 0.8s ease, border-bottom 0.8s ease);
+  }
 
-	& a:hover {
-		color: $linkColor;
-		border-bottom: 3px solid $linkColor;
-		text-decoration: none;
-		@include transition(color 0.8s ease, border-bottom 0.8s ease);
-	}
+  & a:hover {
+    color: $linkColor;
+    border-bottom: 3px solid $linkColor;
+    text-decoration: none;
+    @include transition(color 0.8s ease, border-bottom 0.8s ease);
+  }
 }
 
 ul.nav {
-	@extend %generic-nav;
-	position: relative;
-	//font-size: $mobileHeaderFontSize;
+  @extend %generic-nav;
+  position: relative;
+  //font-size: $mobileHeaderFontSize;
 
-	& li {
-		display: inline-block;
-		overflow: hidden;
-		height: 100%;
+  & li {
+    display: inline-block;
+    overflow: hidden;
+    height: 100%;
 
-		& a,
-		& a:link,
-		& a:visited {
-			line-height: $mobileHeaderLineHeight;
-			padding: $mobileSocialLinkPadding;
-			height: 100%;
-			width: 100%;
+    & a,
+    & a:link,
+    & a:visited {
+      line-height: $mobileHeaderLineHeight;
+      padding: $mobileSocialLinkPadding;
+      height: 100%;
+      width: 100%;
 
-			@include transition(padding 0.8s ease, color 0.8s ease, border-bottom 0.8s ease);
-		}
-	}
+      @include transition(padding 0.8s ease, color 0.8s ease, border-bottom 0.8s ease);
+    }
+  }
 }
 
 ul.nav.vertical {
-	margin-top: 10px;
-	& li {
-		display: block;
-		height: auto;
+  margin-top: 10px;
+  & li {
+    display: block;
+    height: auto;
 
-		& a {
-			display: block;
-			width: 100%;
-			padding: 0;
-		}
-	}
+    & a {
+      display: block;
+      width: 100%;
+      padding: 0;
+    }
+  }
 }
 
 .side-nav {
-	position: fixed;
-	top: $mobileHeaderHeight;
-	z-index: $leftNavZIndex;
+  position: fixed;
+  top: $mobileHeaderHeight;
+  z-index: $leftNavZIndex;
 
-	background-color: $primaryColor;
+  background-color: $primaryColor;
 
-	@include box-shadow(inset -7px, 7px, 14px, -7px, #444);
+  @include box-shadow(inset -7px, 7px, 14px, -7px, #444);
 
-	width: $mobileLeftNavWidth;
-	height: 100%;
+  width: $mobileLeftNavWidth;
+  height: 100%;
 
-	@include transition(width 0.8s ease, min-width 0.8s ease);
+  @include transition(width 0.8s ease, min-width 0.8s ease);
 
-	& .nav li {
-		text-shadow: 0 0 6px #444;
-		position: relative;
-	}
+  & .nav li {
+    text-shadow: 0 0 6px #444;
+    position: relative;
+  }
 
-	& .nav i {
-		display: block;
-		font-size: $mobileLeftNavIconSize;
-	}
+  & .nav i {
+    display: block;
+    font-size: $mobileLeftNavIconSize;
+  }
 
-	& .nav a,
-	& .nav a:link,
-	& .nav a:visited {
-		font-size: $mobileLeftNavFontSize;
-		color: $white;
-		outline: none;
-		@include transition(color 0.8s ease);
-	}
+  & .nav a,
+  & .nav a:link,
+  & .nav a:visited {
+    font-size: $mobileLeftNavFontSize;
+    color: $white;
+    outline: none;
+    @include transition(color 0.8s ease);
+  }
 
-	& .nav a:hover,
-	& .nav a:active {
-		text-decoration: none;
-	}
+  & .nav a:hover,
+  & .nav a:active {
+    text-decoration: none;
+  }
 
-	& a span {
-		position: relative;
-	}
+  & a span {
+    position: relative;
+  }
 
-	& a::before {
-		position: absolute;
-		right: 0;
-		top: $mobileArrowTopSize;
-		width: 0;
-		height: 0;
+  & a::before {
+    position: absolute;
+    right: 0;
+    top: $mobileArrowTopSize;
+    width: 0;
+    height: 0;
 
-		@include triangle($mobileArrowSize, $white);
-		border-right: 0px solid $white;
+    @include triangle($mobileArrowSize, $white);
+    border-right: 0px solid $white;
 
-		content: "";
-		@include transition(width 0.8s ease, border-right 0.8s ease);
-	}
+    content: "";
+    @include transition(width 0.8s ease, border-right 0.8s ease);
+  }
 
-	& a.selected-link::before {
-		display: block;
-		border-right: $mobileArrowSize solid $white;
-	}
+  & a.selected-link::before {
+    display: block;
+    border-right: $mobileArrowSize solid $white;
+  }
 
-	& .thumb {
-		display: block;
-		margin: 0 auto;
-		width: 0;
-		height: 0;
+  & .thumb {
+    display: block;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
 
-		@include transparency(0);
-	}
+    @include transparency(0);
+  }
 
-	& .footer {
-		position: absolute;
-		z-index: -1;
+  & .footer {
+    position: absolute;
+    z-index: -1;
 
-		bottom: 50px;
-		width: 100%;
+    bottom: 50px;
+    width: 100%;
 
-		color: $white;
-		font-size: 10px;
-		line-height: 14px;
-		text-align: center;
+    color: $white;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
 
-		& .name {
-			display: none;
-		}
-	}
+    & .name {
+      display: none;
+    }
+  }
 }
 
 .side-nav-content {
-	text-align: center;
-	z-index: 20;
+  text-align: center;
+  z-index: 20;
 }
 
 .navbar form {
-	padding: 0;
-	margin: 0;
-	float: left;
+  padding: 0;
+  margin: 0;
+  float: left;
 
-	& input[type="text"],
-	& input[type="password"] {
-		background-color: $headerBackgroundColor;
-		color: $white;
-		font-weight: bold;
-		border: 1px solid $white;
-		outline: none;
-		@include box-shadow(0);
-	}
+  & input[type="text"],
+  & input[type="password"] {
+    background-color: $headerBackgroundColor;
+    color: $white;
+    font-weight: bold;
+    border: 1px solid $white;
+    outline: none;
+    @include box-shadow(0);
+  }
 }
 
 @media #{$mq-small-landscape} {
   .side-nav {
     & .nav i {
       font-size: $mobileLandscapeLeftNavIconSize;
-      }
+    }
 
-      & .nav a {
-        line-height: $mobileLandscapeLeftNavLineHeight !important;
-      }
+    & .nav a {
+      line-height: $mobileLandscapeLeftNavLineHeight !important;
+    }
 
     & a::before {
       top: $mobileLandscapeArrowTopSize;
@@ -236,7 +236,7 @@ ul.nav.vertical {
 }
 
 @media #{$mq-medium} {
-	.navbar {
+  .navbar {
     height: $desktopHeaderHeight;
     font-size: $desktopHeaderFontSize;
     line-height: $desktopHeaderLineHeight;

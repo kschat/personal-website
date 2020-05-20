@@ -1,21 +1,21 @@
 /* _animations.scss */
 
 @include keyframes('fadein-left') {
-	from {
-		opacity: 0;
-		left: -100px;
-	}
-	to {
-		opacity: 1;
-		right: 0;
-	}
+  from {
+    opacity: 0;
+    left: -100px;
+  }
+  to {
+    opacity: 1;
+    right: 0;
+  }
 }
 
 @include keyframes('fadein') {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
