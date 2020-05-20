@@ -64,15 +64,6 @@ section[role='main'] {
     padding-top: $desktopHeaderHeight;
     padding-left: $desktopLeftNavWidth;
   }
-
-  .search-results-overlay {
-    & .search-overlay-header {
-      h2 {
-        font-size: $desktopPanelHeaderFontSize;
-        line-height: $desktopPanelHeaderLineHeight;
-      }
-    }
-  }
 }
 
 @media #{$mq-large} {
