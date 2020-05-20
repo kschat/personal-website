@@ -8,7 +8,8 @@
     "build:ts:client": "tsc -p ./tsconfig.client.json",
     "build:scss": "./scripts/build-scss.sh",
     "watch:ts": "run-p 'build:ts:* -- --watch'",
-    "watch:static": "chokidar 'lib/{client,server}/**/*{hbs,scss}' copy-to-build",
+    "watch:static": "chokidar 'lib/{client,server}/**/*.{hbs,scss}' -c 'yarn copy-to-build'",
+    "watch:scss": "chokidar 'lib/client/**/*.scss' -c 'yarn build:scss'",
     "watch": "run-p 'watch:*'",
     "copy-to-build": "./scripts/copy-to-build.sh",
     "postinstall": "yarn run build"
