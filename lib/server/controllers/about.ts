@@ -10,10 +10,10 @@ export type AboutControllerOptions = {
 export const aboutController = ({ appConfig, url }: AboutControllerOptions): RouteOptions => ({
   url,
   method: 'GET',
-  handler: async (req, reply) => {
+  handler: async (request, reply) => {
     const about = await renderContent({
       appConfig,
-      logger: req.log,
+      logger: request.log,
       fileName: 'about.md',
     });
 

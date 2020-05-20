@@ -31,13 +31,20 @@ export const ServicesConfigSchema = t.Record({
 export type ServerConfig = t.Static<typeof ServerConfigSchema>;
 export const ServerConfigSchema = t.Record({
   port: t.Number,
-});
+} as const);
+
+export type ProjectConfig = t.Static<typeof ProjectConfigSchema>;
+export const ProjectConfigSchema = t.Record({
+  aboutPath: t.String,
+  gitHubUrl: t.String,
+} as const);
 
 export type AppConfig = t.Static<typeof AppConfigSchema>;
 export const AppConfigSchema = t.Record({
   environment: EnvironmentSchema,
   services: ServicesConfigSchema,
   content: ContentConfigSchema,
+  projects: t.Array(ProjectConfigSchema),
   server: ServerConfigSchema,
 } as const);
 
