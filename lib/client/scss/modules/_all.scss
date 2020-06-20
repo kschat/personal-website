@@ -1,5 +1,7 @@
 /* _all.scss */
 
-@import "colors";
+$fa-font-path: "../fonts/font-awesome/";
+$fontFamily: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+
 @import "sizes";
 @import "utility";
