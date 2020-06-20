@@ -1,12 +1,5 @@
 /* _base.scss */
 
-@import "modules/all";
-
-a {
-  color: $linkColor;
-  text-decoration: none;
-}
-
 section[role='main'] {
   padding-top: $mobileHeaderHeight;
   padding-left: $mobileLeftNavWidth;

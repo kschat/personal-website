@@ -21,6 +21,7 @@
     "fastify-static": "^2.7.0",
     "got": "^11.1.4",
     "handlebars": "^4.7.6",
+    "normalize.css": "^8.0.1",
     "point-of-view": "^3.8.0",
     "runtypes": "^4.2.0",
     "source-map-support": "^0.5.13",

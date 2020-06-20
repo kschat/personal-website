@@ -1,4 +1,6 @@
 // Modules and variables
+@import "modules/all";
+@import "partials/reset";
 @import "partials/base";
 
 // Partials
@@ -10,8 +12,6 @@
 @import "partials/panel";
 @import "partials/loadingBar";
 @import "partials/resume";
-@import "partials/reset";
-
 
 // Third-party
 
