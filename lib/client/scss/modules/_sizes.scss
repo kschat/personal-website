@@ -1,8 +1,5 @@
-/* sizes.scss */
-
 // Mobile sizes
 $mobileContainerWidth: 100%;
-$mobileHeaderHeight: 40px;
 $mobileLeftNavWidth: 50px;
 
 // Mobile fonts
@@ -32,7 +29,6 @@ $mobileSocialLinkPadding: 0 8px;
 $mobilePanelTopPadding: 10px;
 
 // Desktop sizes
-$desktopHeaderHeight: 48px;
 $desktopLeftNavWidth: 60px;
 $desktopLeftNavMinWidth: 170px;
 $desktopLeftNavWidth: 20%;
@@ -48,6 +44,7 @@ $desktopPanelHeaderLineHeight: 44px;
 $desktopFontSize: 22px;
 $desktopLineHeight: 34px;
 $desktopLeftNavFontSize: 18px;
+$desktopSocialLinkFontSize: 30px;
 
 // Desktop padding
 $desktopSocialLinkPadding: 0 14px;

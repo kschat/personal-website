@@ -1,75 +1,9 @@
-/* _nav.scss */
-
-%generic-navbar {
-  z-index: $headerZIndex;
-  width: 100%;
-  height: $mobileHeaderHeight;
-  font-size: $mobileHeaderFontSize;
-  line-height: $mobileHeaderLineHeight;
-}
-
-%generic-navbar-content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: $mobileHeaderHeight;
-  padding: 0 6px;
-}
-
-%generic-nav {
+ul.nav {
   display: block;
   height: 100%;
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-
-.navbar {
-  @extend %generic-navbar;
-  position: fixed;
-
-  @include transition(height 0.8s ease, font-size 0.8s ease);
-
-  & .navbar-content {
-    @extend %generic-navbar-content;
-
-    background-color: $headerBackgroundColor;
-    color: $headerColor;
-
-    @include transition(height 0.8s ease);
-  }
-
-  & .brand {
-    height: 100%;
-    position: relative;
-    float: left;
-
-    i {
-      padding-right: 6px;
-    }
-  }
-
-  & a,
-  & a:link,
-  & a:visited {
-    display: block;
-    color: $headerColor;
-    border-bottom: 1px solid transparent;
-    @include transition(color 0.8s ease, border-bottom 0.8s ease);
-  }
-
-  & a:hover {
-    color: $linkColor;
-    border-bottom: 3px solid $linkColor;
-    text-decoration: none;
-    @include transition(color 0.8s ease, border-bottom 0.8s ease);
-  }
-}
-
-ul.nav {
-  @extend %generic-nav;
-  position: relative;
-  //font-size: $mobileHeaderFontSize;
 
   & li {
     display: inline-block;
@@ -84,13 +18,18 @@ ul.nav {
       height: 100%;
       width: 100%;
 
+      // TODO we can probably get rid of this
       @include transition(padding 0.8s ease, color 0.8s ease, border-bottom 0.8s ease);
     }
   }
 }
 
 ul.nav.vertical {
+  @include flexbox();
+  @include flex-direction(column);
+  @include justify-content(center);
   margin-top: 10px;
+
   & li {
     display: block;
     height: auto;
@@ -105,8 +44,9 @@ ul.nav.vertical {
 
 .side-nav {
   position: fixed;
-  top: $mobileHeaderHeight;
+  top: 0;
   z-index: $leftNavZIndex;
+  color: $white;
 
   background-color: $primaryColor;
 
@@ -119,7 +59,6 @@ ul.nav.vertical {
 
   & .nav li {
     text-shadow: 0 0 6px #444;
-    position: relative;
   }
 
   & .nav i {
@@ -131,7 +70,7 @@ ul.nav.vertical {
   & .nav a:link,
   & .nav a:visited {
     font-size: $mobileLeftNavFontSize;
-    color: $white;
+    color: $sideNavLinkColor;
     outline: none;
     @include transition(color 0.8s ease);
   }
@@ -172,44 +111,14 @@ ul.nav.vertical {
 
     @include transparency(0);
   }
-
-  & .footer {
-    position: absolute;
-    z-index: -1;
-
-    bottom: 50px;
-    width: 100%;
-
-    color: $white;
-    font-size: 10px;
-    line-height: 14px;
-    text-align: center;
-
-    & .name {
-      display: none;
-    }
-  }
 }
 
 .side-nav-content {
   text-align: center;
   z-index: 20;
-}
-
-.navbar form {
-  padding: 0;
-  margin: 0;
-  float: left;
-
-  & input[type="text"],
-  & input[type="password"] {
-    background-color: $headerBackgroundColor;
-    color: $white;
-    font-weight: bold;
-    border: 1px solid $white;
-    outline: none;
-    @include box-shadow(0);
-  }
+  height: 100%;
+  @include flexbox();
+  @include flex-direction(column);
 }
 
 @media #{$mq-small-landscape} {
@@ -236,33 +145,26 @@ ul.nav.vertical {
 }
 
 @media #{$mq-medium} {
-  .navbar {
-    height: $desktopHeaderHeight;
-    font-size: $desktopHeaderFontSize;
-    line-height: $desktopHeaderLineHeight;
-
-    & .navbar-content {
-      height: $desktopHeaderHeight;
-    }
-  }
-
   .side-nav {
-    top: $desktopHeaderHeight;
+    top: 0;
     min-width: $desktopLeftNavMinWidth;
     width: $desktopLeftNavWidth;
 
-    background-color: $contrastColor;
+    background-color: $sideNavBackgroundColor;
     border-right: 1px solid $gray;
 
     @include box-shadow(0);
 
-    & .nav li {
-      text-shadow: none;
-      border-top: 1px solid $gray;
+    & a,
+    & a:link,
+    & a:visited {
+      font-size: $desktopLeftNavFontSize;
+      background-color: $sideNavBackgroundColor;
+      color: $sideNavLinkColor;
     }
 
-    & .nav {
-      border-bottom: 1px solid $gray;
+    & .nav li {
+      text-shadow: none;
     }
 
     & .nav i {
@@ -273,32 +175,17 @@ ul.nav.vertical {
     & .nav a:link,
     & .nav a:visited {
       font-size: $desktopLeftNavFontSize;
-      background-color: $contrastColor;
-      color: $linkColor;
+      background-color: $sideNavBackgroundColor;
+      color: $sideNavLinkColor;
 
       &.selected-link {
-        color: $white;
+        // TODO underline link or something
       }
     }
 
-    & .nav a:hover::before {
-      width: 8px;
-    }
-
     & a::before {
-      top: 0;
-      left: 0;
-
-      width: 0%;
-      height: 100%;
-
-      background-color: $linkColor;
-      border-right: 0;
-    }
-
-    & .nav a.selected-link::before {
-      border-right: 0;
-      width: 100%;
+      // TODO figure out what we're doing with the link hover animation
+      display: none;
     }
 
     & .thumb {
@@ -308,15 +195,27 @@ ul.nav.vertical {
       background-size: 125px;
       @include transparency(1);
       @include transition(opacity 0.8s ease 0.6s);
+      border: 1px solid $white;
     }
 
     .footer {
-      color: $grayDark;
-      font-size: 14px;
-      line-height: 20px;
+      @include flexbox();
+      @include flex-direction(column);
+    }
 
-      & .name {
-        display: inline;
+    .social-media {
+      @include flexbox();
+      @include justify-content(center);
+      @include align-items(center);
+
+      margin: 20px 0;
+
+      & a,
+      & a:link,
+      & a:visited {
+        font-size: $desktopSocialLinkFontSize;
+        padding: 8px;
+        margin: 0 8px;
       }
     }
   }
@@ -344,6 +243,7 @@ ul.nav.vertical {
       height: 200px;
       @include border-radius(100px);
       background-size: 200px;
+      border: 2px solid $white;
     }
   }
 
