@@ -1,8 +1,5 @@
-/* sizes.scss */
-
 // Mobile sizes
 $mobileContainerWidth: 100%;
-$mobileHeaderHeight: 40px;
 $mobileLeftNavWidth: 50px;
 
 // Mobile fonts
@@ -32,7 +29,6 @@ $mobileSocialLinkPadding: 0 8px;
 $mobilePanelTopPadding: 10px;
 
 // Desktop sizes
-$desktopHeaderHeight: 48px;
 $desktopLeftNavWidth: 60px;
 $desktopLeftNavMinWidth: 170px;
 $desktopLeftNavWidth: 20%;
@@ -45,9 +41,10 @@ $desktopHeaderLineHeight: 48px;
 $desktopPanelHeaderFontSize: 40px;
 $desktopPanelHeaderLineHeight: 44px;
 
-$desktopFontSize: 22px;
-$desktopLineHeight: 34px;
-$desktopLeftNavFontSize: 18px;
+$desktopFontSize: 18px;
+$desktopLineHeight: 24px;
+$desktopLeftNavFontSize: 23px;
+$desktopSocialLinkFontSize: 30px;
 
 // Desktop padding
 $desktopSocialLinkPadding: 0 14px;
@@ -60,7 +57,7 @@ $panelZIndex: 97;
 $panelOverlayZIndex: 98;
 
 // Media queries
-$mq-small: "only screen and (max-width: 767px)"; // technically shouldn't be used since this site is mobile first
+$mq-small: "only screen and (max-width: 767px)";
 $mq-small-landscape: "only screen and (max-width: 767px) and (orientation: landscape)";
 $mq-medium: "only screen and (min-width: 768px)";
 $mq-large: "only screen and (min-width: 1225px)";

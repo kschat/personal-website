@@ -1,5 +1,4 @@
 section[role='main'] {
-  padding-top: $mobileHeaderHeight;
   padding-left: $mobileLeftNavWidth;
   height: 100%;
   background-color: $backgroundColor;
@@ -52,7 +51,6 @@ section[role='main'] {
 
 @media #{$mq-medium} {
   section[role='main'] {
-    padding-top: $desktopHeaderHeight;
     padding-left: $desktopLeftNavWidth;
   }
 }

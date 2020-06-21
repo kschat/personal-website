@@ -1,192 +1,80 @@
-/* _nav.scss */
+ul.nav {
+  @include flexbox();
+  @include flex-direction(column);
+  @include justify-content(space-around);
+  @include flex-basis(60%);
 
-%generic-navbar {
-  z-index: $headerZIndex;
-  width: 100%;
-  height: $mobileHeaderHeight;
-  font-size: $mobileHeaderFontSize;
-  line-height: $mobileHeaderLineHeight;
-}
-
-%generic-navbar-content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: $mobileHeaderHeight;
-  padding: 0 6px;
-}
-
-%generic-nav {
-  display: block;
   height: 100%;
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-
-.navbar {
-  @extend %generic-navbar;
-  position: fixed;
-
-  @include transition(height 0.8s ease, font-size 0.8s ease);
-
-  & .navbar-content {
-    @extend %generic-navbar-content;
-
-    background-color: $headerBackgroundColor;
-    color: $headerColor;
-
-    @include transition(height 0.8s ease);
-  }
-
-  & .brand {
-    height: 100%;
-    position: relative;
-    float: left;
-
-    i {
-      padding-right: 6px;
-    }
-  }
-
-  & a,
-  & a:link,
-  & a:visited {
-    display: block;
-    color: $headerColor;
-    border-bottom: 1px solid transparent;
-    @include transition(color 0.8s ease, border-bottom 0.8s ease);
-  }
-
-  & a:hover {
-    color: $linkColor;
-    border-bottom: 3px solid $linkColor;
-    text-decoration: none;
-    @include transition(color 0.8s ease, border-bottom 0.8s ease);
-  }
-}
-
-ul.nav {
-  @extend %generic-nav;
-  position: relative;
-  //font-size: $mobileHeaderFontSize;
 
   & li {
     display: inline-block;
-    overflow: hidden;
-    height: 100%;
-
-    & a,
-    & a:link,
-    & a:visited {
-      line-height: $mobileHeaderLineHeight;
-      padding: $mobileSocialLinkPadding;
-      height: 100%;
-      width: 100%;
-
-      @include transition(padding 0.8s ease, color 0.8s ease, border-bottom 0.8s ease);
-    }
   }
-}
 
-ul.nav.vertical {
-  margin-top: 10px;
-  & li {
+  & i {
     display: block;
-    height: auto;
-
-    & a {
-      display: block;
-      width: 100%;
-      padding: 0;
-    }
+    font-size: $mobileLeftNavIconSize;
   }
 }
 
 .side-nav {
   position: fixed;
-  top: $mobileHeaderHeight;
+  top: 0;
   z-index: $leftNavZIndex;
+  color: $white;
 
   background-color: $primaryColor;
-
-  @include box-shadow(inset -7px, 7px, 14px, -7px, #444);
 
   width: $mobileLeftNavWidth;
   height: 100%;
 
   @include transition(width 0.8s ease, min-width 0.8s ease);
 
-  & .nav li {
-    text-shadow: 0 0 6px #444;
-    position: relative;
-  }
-
-  & .nav i {
-    display: block;
-    font-size: $mobileLeftNavIconSize;
-  }
-
-  & .nav a,
-  & .nav a:link,
-  & .nav a:visited {
+  & a,
+  & a:link,
+  & a:visited {
     font-size: $mobileLeftNavFontSize;
-    color: $white;
+    color: $sideNavLinkColor;
     outline: none;
-    @include transition(color 0.8s ease);
   }
 
-  & .nav a:hover,
-  & .nav a:active {
+  & a:hover,
+  & a:active {
     text-decoration: none;
   }
 
-  & a span {
-    position: relative;
+  & .avatar {
+    display: none;
   }
 
-  & a::before {
-    position: absolute;
-    right: 0;
-    top: $mobileArrowTopSize;
-    width: 0;
-    height: 0;
-
-    @include triangle($mobileArrowSize, $white);
-    border-right: 0px solid $white;
-
-    content: "";
-    @include transition(width 0.8s ease, border-right 0.8s ease);
+  .footer {
+    @include flex-basis(40%);
   }
 
-  & a.selected-link::before {
+  .social-media {
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(space-around);
+
+    height: 100%;
+  }
+
+  & .nav-button,
+  & .nav-button:link,
+  & .nav-button:visited {
     display: block;
-    border-right: $mobileArrowSize solid $white;
-  }
+    line-height: $mobileHeaderLineHeight;
+    padding: 10px 0;
 
-  & .thumb {
-    display: block;
-    margin: 0 auto;
-    width: 0;
-    height: 0;
-
-    @include transparency(0);
-  }
-
-  & .footer {
-    position: absolute;
-    z-index: -1;
-
-    bottom: 50px;
-    width: 100%;
-
-    color: $white;
-    font-size: 10px;
-    line-height: 14px;
-    text-align: center;
-
-    & .name {
+    span {
       display: none;
+    }
+
+    & i {
+      font-size: $mobileLeftNavIconSize;
+      vertical-align: middle;
     }
   }
 }
@@ -194,22 +82,9 @@ ul.nav.vertical {
 .side-nav-content {
   text-align: center;
   z-index: 20;
-}
-
-.navbar form {
-  padding: 0;
-  margin: 0;
-  float: left;
-
-  & input[type="text"],
-  & input[type="password"] {
-    background-color: $headerBackgroundColor;
-    color: $white;
-    font-weight: bold;
-    border: 1px solid $white;
-    outline: none;
-    @include box-shadow(0);
-  }
+  height: 100%;
+  @include flexbox();
+  @include flex-direction(column);
 }
 
 @media #{$mq-small-landscape} {
@@ -236,101 +111,85 @@ ul.nav.vertical {
 }
 
 @media #{$mq-medium} {
-  .navbar {
-    height: $desktopHeaderHeight;
-    font-size: $desktopHeaderFontSize;
-    line-height: $desktopHeaderLineHeight;
-
-    & .navbar-content {
-      height: $desktopHeaderHeight;
-    }
-  }
-
   .side-nav {
-    top: $desktopHeaderHeight;
+    top: 0;
     min-width: $desktopLeftNavMinWidth;
     width: $desktopLeftNavWidth;
+    padding-top: 20px;
 
-    background-color: $contrastColor;
-    border-right: 1px solid $gray;
+    // border-right: 1px solid $gray;
 
-    @include box-shadow(0);
-
-    & .nav li {
-      text-shadow: none;
-      border-top: 1px solid $gray;
-    }
-
-    & .nav {
-      border-bottom: 1px solid $gray;
-    }
-
-    & .nav i {
-      display: none;
-    }
-
-    & .nav a,
-    & .nav a:link,
-    & .nav a:visited {
+    & a,
+    & a:link,
+    & a:visited,
+    & .nav-button,
+    & .nav-button:link,
+    & .nav-button:visited {
       font-size: $desktopLeftNavFontSize;
-      background-color: $contrastColor;
-      color: $linkColor;
+      & span {
+        display: block;
+      }
 
-      &.selected-link {
-        color: $white;
+      & i {
+        font-size: $desktopSocialLinkFontSize;
+        vertical-align: middle;
       }
     }
 
-    & .nav a:hover::before {
-      width: 8px;
-    }
-
-    & a::before {
-      top: 0;
-      left: 0;
-
-      width: 0%;
-      height: 100%;
-
-      background-color: $linkColor;
-      border-right: 0;
-    }
-
-    & .nav a.selected-link::before {
-      border-right: 0;
+    & .avatar {
+      display: block;
       width: 100%;
-    }
+      padding: 0 25px;
+      // height: 100%;
+      // @include transparency(1);
+      // @include transition(opacity 0.8s ease 0.6s);
 
-    & .thumb {
-      width: 125px;
-      height: 125px;
-      @include border-radius(60px);
-      background-size: 125px;
-      @include transparency(1);
-      @include transition(opacity 0.8s ease 0.6s);
+      & .avatar-img {
+        border: 2px solid $white;
+        border-radius: 50%;
+        width: 100%;
+        height: auto;
+      }
     }
 
     .footer {
-      color: $grayDark;
-      font-size: 14px;
-      line-height: 20px;
+      @include flexbox();
+      @include flex-direction(column);
+      @include flex-basis(unset);
+    }
 
-      & .name {
-        display: inline;
+    .social-media {
+      @include justify-content(center);
+      @include align-items(center);
+      @include flex-direction(row);
+
+      margin: 20px 0;
+
+      & a,
+      & a:link,
+      & a:visited {
+        font-size: $desktopSocialLinkFontSize;
+        padding: 8px;
+        margin: 0 8px;
       }
     }
   }
 
-  .side-nav-content {
-    padding-top: 10px;
-  }
+  ul.nav {
+    @include justify-content(center);
+    @include flex-basis(unset);
 
-  ul.nav li {
-    & a,
-    & a:link,
-    & a:visited {
-      line-height: $desktopHeaderLineHeight;
-      padding: $desktopSocialLinkPadding;
+    & i {
+      display: none;
+    }
+
+    & li {
+      & a,
+      & a:link,
+      & a:visited {
+        line-height: $desktopHeaderLineHeight;
+        padding: $desktopSocialLinkPadding;
+      }
     }
   }
 }
@@ -338,13 +197,6 @@ ul.nav.vertical {
 @media #{$mq-large} {
   .side-nav {
     max-width: $desktopLeftNavMaxWidth;
-
-    & .thumb {
-      width: 200px;
-      height: 200px;
-      @include border-radius(100px);
-      background-size: 200px;
-    }
   }
 
   ul.nav.vertical {
