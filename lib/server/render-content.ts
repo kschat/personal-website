@@ -12,12 +12,14 @@ export type RenderContentOptions = {
   readonly logger: Logger;
   readonly appConfig: AppConfig;
   readonly fileName: string;
+  readonly renderBreaks?: boolean;
 };
 
 export const renderContent = async ({
   logger,
   appConfig,
   fileName,
+  renderBreaks,
 }: RenderContentOptions): Promise<string> => {
   const { basePath, source } = appConfig.content;
   const filePath = joinPath(resolvePath(basePath), fileName);
@@ -26,6 +28,7 @@ export const renderContent = async ({
     : await getLocalFile(filePath);
 
   // TODO sanitize
+  Marked.setOptions({ breaks: renderBreaks ?? false });
   return Marked.parse(content);
 };
 
