@@ -1,5 +1,9 @@
 ul.nav {
-  display: block;
+  @include flexbox();
+  @include flex-direction(column);
+  @include justify-content(space-around);
+  @include flex-basis(60%);
+
   height: 100%;
   margin: 0;
   padding: 0;
@@ -7,38 +11,11 @@ ul.nav {
 
   & li {
     display: inline-block;
-    overflow: hidden;
-    height: 100%;
-
-    & a,
-    & a:link,
-    & a:visited {
-      line-height: $mobileHeaderLineHeight;
-      padding: $mobileSocialLinkPadding;
-      height: 100%;
-      width: 100%;
-
-      // TODO we can probably get rid of this
-      @include transition(padding 0.8s ease, color 0.8s ease, border-bottom 0.8s ease);
-    }
   }
-}
 
-ul.nav.vertical {
-  @include flexbox();
-  @include flex-direction(column);
-  @include justify-content(center);
-  margin-top: 10px;
-
-  & li {
+  & i {
     display: block;
-    height: auto;
-
-    & a {
-      display: block;
-      width: 100%;
-      padding: 0;
-    }
+    font-size: $mobileLeftNavIconSize;
   }
 }
 
@@ -50,66 +27,56 @@ ul.nav.vertical {
 
   background-color: $primaryColor;
 
-  @include box-shadow(inset -7px, 7px, 14px, -7px, #444);
-
   width: $mobileLeftNavWidth;
   height: 100%;
 
   @include transition(width 0.8s ease, min-width 0.8s ease);
 
-  & .nav li {
-    text-shadow: 0 0 6px #444;
-  }
-
-  & .nav i {
-    display: block;
-    font-size: $mobileLeftNavIconSize;
-  }
-
-  & .nav a,
-  & .nav a:link,
-  & .nav a:visited {
+  & a,
+  & a:link,
+  & a:visited {
     font-size: $mobileLeftNavFontSize;
     color: $sideNavLinkColor;
     outline: none;
-    @include transition(color 0.8s ease);
   }
 
-  & .nav a:hover,
-  & .nav a:active {
+  & a:hover,
+  & a:active {
     text-decoration: none;
   }
 
-  & a span {
-    position: relative;
+  // TODO rename to avatar and pull out of side-nav
+  & .avatar {
+    display: none;
   }
 
-  & a::before {
-    position: absolute;
-    right: 0;
-    top: $mobileArrowTopSize;
-    width: 0;
-    height: 0;
-
-    @include triangle($mobileArrowSize, $white);
-    border-right: 0px solid $white;
-
-    content: "";
-    @include transition(width 0.8s ease, border-right 0.8s ease);
+  .footer {
+    @include flex-basis(40%);
   }
 
-  & a.selected-link::before {
+  .social-media {
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(space-around);
+
+    height: 100%;
+  }
+
+  & .nav-button,
+  & .nav-button:link,
+  & .nav-button:visited {
     display: block;
-    border-right: $mobileArrowSize solid $white;
-  }
+    line-height: $mobileHeaderLineHeight;
+    padding: 10px 0;
 
-  & .thumb {
-    display: block;
-    margin: 0 auto;
-    width: 0;
-    height: 0;
+    span {
+      display: none;
+    }
 
-    @include transparency(0);
+    & i {
+      font-size: $mobileLeftNavIconSize;
+      vertical-align: middle;
+    }
   }
 }
 
@@ -153,18 +120,12 @@ ul.nav.vertical {
     background-color: $sideNavBackgroundColor;
     border-right: 1px solid $gray;
 
-    @include box-shadow(0);
-
     & a,
     & a:link,
     & a:visited {
       font-size: $desktopLeftNavFontSize;
       background-color: $sideNavBackgroundColor;
       color: $sideNavLinkColor;
-    }
-
-    & .nav li {
-      text-shadow: none;
     }
 
     & .nav i {
@@ -188,7 +149,7 @@ ul.nav.vertical {
       display: none;
     }
 
-    & .thumb {
+    & .avatar {
       width: 125px;
       height: 125px;
       @include border-radius(60px);
@@ -220,10 +181,6 @@ ul.nav.vertical {
     }
   }
 
-  .side-nav-content {
-    padding-top: 10px;
-  }
-
   ul.nav li {
     & a,
     & a:link,
@@ -238,7 +195,7 @@ ul.nav.vertical {
   .side-nav {
     max-width: $desktopLeftNavMaxWidth;
 
-    & .thumb {
+    & .avatar {
       width: 200px;
       height: 200px;
       @include border-radius(100px);
