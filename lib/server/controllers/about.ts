@@ -17,7 +17,7 @@ export const aboutController = ({ appConfig, url }: AboutControllerOptions): Rou
       fileName: 'about.md',
     });
 
-    return reply.view('about', { about });
+    return reply.view('about', { about, page: 'about' });
   },
 });
 

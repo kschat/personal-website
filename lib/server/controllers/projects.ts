@@ -22,7 +22,7 @@ export const projectsController = ({ appConfig }: InitOptions): RouteOptions => 
       }),
     );
 
-    return reply.view('projects', { projects });
+    return reply.view('projects', { projects, page: 'projects' });
   },
 });
 

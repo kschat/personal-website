@@ -9,6 +9,7 @@ import { join as joinPath, resolve as resolvePath } from 'path';
 import { init as initRoutes } from './routes';
 import { loadConfig } from './config';
 import { ConfigError } from './errors';
+import { ifEqual } from './views/helpers/if-equal';
 
 export const startServer = async (configPath: string) => {
   const config = await loadConfig(resolvePath(configPath));
@@ -24,6 +25,8 @@ export const startServer = async (configPath: string) => {
     tags: ['config'],
     ...config,
   });
+
+  handlebars.registerHelper(ifEqual.name, ifEqual);
 
   server.register(pointOfView, {
     engine: {

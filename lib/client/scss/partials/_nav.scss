@@ -117,8 +117,6 @@ ul.nav {
     width: $desktopLeftNavWidth;
     padding-top: 20px;
 
-    // border-right: 1px solid $gray;
-
     & a,
     & a:link,
     & a:visited,
@@ -126,6 +124,10 @@ ul.nav {
     & .nav-button:link,
     & .nav-button:visited {
       font-size: $desktopLeftNavFontSize;
+      margin: 10px 25px;
+      padding-top: 0;
+      padding-bottom: 0;
+
       & span {
         display: block;
       }
@@ -133,6 +135,12 @@ ul.nav {
       & i {
         font-size: $desktopSocialLinkFontSize;
         vertical-align: middle;
+      }
+
+      &.selected {
+        color: $primaryColor;
+        background-color: $white;
+        border-radius: 25px;
       }
     }
 

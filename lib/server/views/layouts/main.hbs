@@ -26,21 +26,21 @@
 
         <ul class="nav">
           <li>
-            <a id="about" class="nav-button" href="about" data-bypass="true">
+            <a id="about" class="nav-button{{#ifEqual page 'about'}} selected{{/ifEqual}}" href="about" data-bypass="true">
               <i class="fas fa-address-card"></i>
               <span>About</span>
             </a>
           </li>
 
           <li>
-            <a id="projects" class="nav-button" href="projects" data-bypass="true">
+            <a id="projects" class="nav-button{{#ifEqual page 'projects'}} selected{{/ifEqual}}" href="projects" data-bypass="true">
               <i class="fas fa-code"></i>
               <span>Projects</span>
             </a>
           </li>
 
           <li>
-            <a id="resume" class="nav-button" href="resume" data-bypass="true">
+            <a id="resume" class="nav-button{{#ifEqual page 'resume'}} selected{{/ifEqual}}" href="resume" data-bypass="true">
               <i class="fa fa-file-alt"></i>
               <span>Resume</span>
             </a>
