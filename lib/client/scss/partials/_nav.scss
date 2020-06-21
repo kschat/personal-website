@@ -45,7 +45,6 @@ ul.nav {
     text-decoration: none;
   }
 
-  // TODO rename to avatar and pull out of side-nav
   & .avatar {
     display: none;
   }
@@ -116,58 +115,53 @@ ul.nav {
     top: 0;
     min-width: $desktopLeftNavMinWidth;
     width: $desktopLeftNavWidth;
+    padding-top: 20px;
 
-    background-color: $sideNavBackgroundColor;
-    border-right: 1px solid $gray;
+    // border-right: 1px solid $gray;
 
     & a,
     & a:link,
-    & a:visited {
+    & a:visited,
+    & .nav-button,
+    & .nav-button:link,
+    & .nav-button:visited {
       font-size: $desktopLeftNavFontSize;
-      background-color: $sideNavBackgroundColor;
-      color: $sideNavLinkColor;
-    }
+      & span {
+        display: block;
+      }
 
-    & .nav i {
-      display: none;
-    }
-
-    & .nav a,
-    & .nav a:link,
-    & .nav a:visited {
-      font-size: $desktopLeftNavFontSize;
-      background-color: $sideNavBackgroundColor;
-      color: $sideNavLinkColor;
-
-      &.selected-link {
-        // TODO underline link or something
+      & i {
+        font-size: $desktopSocialLinkFontSize;
+        vertical-align: middle;
       }
     }
 
-    & a::before {
-      // TODO figure out what we're doing with the link hover animation
-      display: none;
-    }
-
     & .avatar {
-      width: 125px;
-      height: 125px;
-      @include border-radius(60px);
-      background-size: 125px;
-      @include transparency(1);
-      @include transition(opacity 0.8s ease 0.6s);
-      border: 1px solid $white;
+      display: block;
+      width: 100%;
+      padding: 0 25px;
+      // height: 100%;
+      // @include transparency(1);
+      // @include transition(opacity 0.8s ease 0.6s);
+
+      & .avatar-img {
+        border: 2px solid $white;
+        border-radius: 50%;
+        width: 100%;
+        height: auto;
+      }
     }
 
     .footer {
       @include flexbox();
       @include flex-direction(column);
+      @include flex-basis(unset);
     }
 
     .social-media {
-      @include flexbox();
       @include justify-content(center);
       @include align-items(center);
+      @include flex-direction(row);
 
       margin: 20px 0;
 
@@ -181,12 +175,21 @@ ul.nav {
     }
   }
 
-  ul.nav li {
-    & a,
-    & a:link,
-    & a:visited {
-      line-height: $desktopHeaderLineHeight;
-      padding: $desktopSocialLinkPadding;
+  ul.nav {
+    @include justify-content(center);
+    @include flex-basis(unset);
+
+    & i {
+      display: none;
+    }
+
+    & li {
+      & a,
+      & a:link,
+      & a:visited {
+        line-height: $desktopHeaderLineHeight;
+        padding: $desktopSocialLinkPadding;
+      }
     }
   }
 }
@@ -194,14 +197,6 @@ ul.nav {
 @media #{$mq-large} {
   .side-nav {
     max-width: $desktopLeftNavMaxWidth;
-
-    & .avatar {
-      width: 200px;
-      height: 200px;
-      @include border-radius(100px);
-      background-size: 200px;
-      border: 2px solid $white;
-    }
   }
 
   ul.nav.vertical {

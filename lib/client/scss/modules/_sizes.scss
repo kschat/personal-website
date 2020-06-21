@@ -43,7 +43,7 @@ $desktopPanelHeaderLineHeight: 44px;
 
 $desktopFontSize: 22px;
 $desktopLineHeight: 34px;
-$desktopLeftNavFontSize: 18px;
+$desktopLeftNavFontSize: 22px;
 $desktopSocialLinkFontSize: 30px;
 
 // Desktop padding
@@ -57,7 +57,7 @@ $panelZIndex: 97;
 $panelOverlayZIndex: 98;
 
 // Media queries
-$mq-small: "only screen and (max-width: 767px)"; // technically shouldn't be used since this site is mobile first
+$mq-small: "only screen and (max-width: 767px)";
 $mq-small-landscape: "only screen and (max-width: 767px) and (orientation: landscape)";
 $mq-medium: "only screen and (min-width: 768px)";
 $mq-large: "only screen and (min-width: 1225px)";
