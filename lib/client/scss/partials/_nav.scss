@@ -30,7 +30,7 @@ ul.nav {
   width: $mobileLeftNavWidth;
   height: 100%;
 
-  @include transition(width 0.8s ease, min-width 0.8s ease);
+  @include transition(width 0.8s ease);
 
   a,
   a:link,
@@ -115,7 +115,6 @@ ul.nav {
 @media #{$mq-medium} {
   .side-nav {
     top: 0;
-    min-width: $desktopLeftNavMinWidth;
     width: $desktopLeftNavWidth;
     padding-top: 20px;
 
