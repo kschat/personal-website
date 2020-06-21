@@ -30,7 +30,7 @@ export const getRawFile = async ({
   });
 
   if (statusCode >= 400) {
-    throw new Error('TODO create custom error');
+    throw new Error(`Received unexpected status code "${statusCode}"`);
   }
 
   return {
