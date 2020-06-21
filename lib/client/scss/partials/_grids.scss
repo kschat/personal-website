@@ -3,8 +3,8 @@
 
   @include clear-fix;
 
-  & > .container,
-  & > .container-fluid {
+  > .container,
+  > .container-fluid {
     padding-top: $mobileHeaderLineHeight;
   }
 

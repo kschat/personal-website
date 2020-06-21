@@ -9,11 +9,11 @@ ul.nav {
   padding: 0;
   list-style-type: none;
 
-  & li {
+  li {
     display: inline-block;
   }
 
-  & i {
+  i {
     display: block;
     font-size: $mobileLeftNavIconSize;
   }
@@ -32,20 +32,20 @@ ul.nav {
 
   @include transition(width 0.8s ease, min-width 0.8s ease);
 
-  & a,
-  & a:link,
-  & a:visited {
+  a,
+  a:link,
+  a:visited {
     font-size: $mobileLeftNavFontSize;
     color: $sideNavLinkColor;
     outline: none;
   }
 
-  & a:hover,
-  & a:active {
+  a:hover,
+  a:active {
     text-decoration: none;
   }
 
-  & .avatar {
+  .avatar {
     display: none;
   }
 
@@ -61,9 +61,9 @@ ul.nav {
     height: 100%;
   }
 
-  & .nav-button,
-  & .nav-button:link,
-  & .nav-button:visited {
+  .nav-button,
+  .nav-button:link,
+  .nav-button:visited {
     display: block;
     line-height: $mobileHeaderLineHeight;
     padding: 10px 0;
@@ -72,7 +72,7 @@ ul.nav {
       display: none;
     }
 
-    & i {
+    i {
       font-size: $mobileLeftNavIconSize;
       vertical-align: middle;
     }
@@ -89,21 +89,21 @@ ul.nav {
 
 @media #{$mq-small-landscape} {
   .side-nav {
-    & .nav i {
+    .nav i {
       font-size: $mobileLandscapeLeftNavIconSize;
     }
 
-    & .nav a {
+    .nav a {
       line-height: $mobileLandscapeLeftNavLineHeight !important;
     }
 
-    & a::before {
+    a::before {
       top: $mobileLandscapeArrowTopSize;
       @include triangle($mobileLandscapeArrowSize, $white);
       border-right: 0px solid $white;
     }
 
-    & a.selected-link::before {
+    a.selected-link::before {
       display: block;
       border-right: $mobileArrowSize solid $white;
     }
@@ -117,22 +117,22 @@ ul.nav {
     width: $desktopLeftNavWidth;
     padding-top: 20px;
 
-    & a,
-    & a:link,
-    & a:visited,
-    & .nav-button,
-    & .nav-button:link,
-    & .nav-button:visited {
+    a,
+    a:link,
+    a:visited,
+    .nav-button,
+    .nav-button:link,
+    .nav-button:visited {
       font-size: $desktopLeftNavFontSize;
       margin: 10px 25px;
       padding-top: 0;
       padding-bottom: 0;
 
-      & span {
+      span {
         display: block;
       }
 
-      & i {
+      i {
         font-size: $desktopSocialLinkFontSize;
         vertical-align: middle;
       }
@@ -144,7 +144,7 @@ ul.nav {
       }
     }
 
-    & .avatar {
+    .avatar {
       display: block;
       width: 100%;
       padding: 0 25px;
@@ -152,7 +152,7 @@ ul.nav {
       // @include transparency(1);
       // @include transition(opacity 0.8s ease 0.6s);
 
-      & .avatar-img {
+      .avatar-img {
         border: 2px solid $white;
         border-radius: 50%;
         width: 100%;
@@ -173,9 +173,9 @@ ul.nav {
 
       margin: 20px 0;
 
-      & a,
-      & a:link,
-      & a:visited {
+      a,
+      a:link,
+      a:visited {
         font-size: $desktopSocialLinkFontSize;
         padding: 8px;
         margin: 0 8px;
@@ -187,14 +187,14 @@ ul.nav {
     @include justify-content(center);
     @include flex-basis(unset);
 
-    & i {
+    i {
       display: none;
     }
 
-    & li {
-      & a,
-      & a:link,
-      & a:visited {
+    li {
+      a,
+      a:link,
+      a:visited {
         line-height: $desktopHeaderLineHeight;
         padding: $desktopSocialLinkPadding;
       }
