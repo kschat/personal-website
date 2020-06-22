@@ -5,6 +5,7 @@
     "node": "14.2.x"
   },
   "scripts": {
+    "start": "node dist/server/index.js ./config/production.yml",
     "build": "run-s build:ts copy-to-build build:scss",
     "build:ts": "run-s 'build:ts:*'",
     "build:ts:server": "tsc -p ./tsconfig.server.json",
