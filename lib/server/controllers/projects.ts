@@ -7,17 +7,24 @@ export const projectsController = ({ appConfig }: InitOptions): RouteOptions => 
   url: '/projects',
   handler: async (request, reply) => {
     const projects = await Promise.all(
-      appConfig.projects.map(async (project, index) => {
+      appConfig.projects.map(async (project) => {
+        const name = project.name.replace(/\s/g, '-').toLowerCase();
         const about = await renderContent({
           appConfig,
           logger: request.log,
-          fileName: project.aboutPath,
+          fileName: `projects/${name}.md`,
         });
+
+        const gitHubUrl = `https://github.com/kschat/${name}`;
+
+        const button = project.button === 'DEMO'
+          ? { label: 'Check it out', url: project.url }
+          : { label: 'Read more', url: `${gitHubUrl}#readme` };
 
         return {
           about,
-          href: `project/${index}`,
-          gitHubUrl: project.gitHubUrl,
+          button,
+          gitHubUrl,
         };
       }),
     );

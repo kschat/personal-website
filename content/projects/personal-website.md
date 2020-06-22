@@ -1,4 +1,4 @@
-#### Portfolio Site
+#### Personal Site
 
 My attempt at creating my own, custom portfolio site from scratch. It was
 originally written in PHP when I was college, but was completely rewritten in

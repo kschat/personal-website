@@ -33,11 +33,24 @@ export const ServerConfigSchema = t.Record({
   port: t.Number,
 } as const);
 
+export type ButtonType = t.Static<typeof ButtonTypeSchema>;
+export const ButtonTypeSchema = t.Union(
+  t.Literal('READ_MORE'),
+  t.Literal('TRY_IT'),
+);
+
 export type ProjectConfig = t.Static<typeof ProjectConfigSchema>;
-export const ProjectConfigSchema = t.Record({
-  aboutPath: t.String,
-  gitHubUrl: t.String,
-} as const);
+export const ProjectConfigSchema = t.Union(
+  t.Record({
+    name: t.String,
+    button: t.Literal('READ_MORE'),
+  } as const),
+  t.Record({
+    name: t.String,
+    button: t.Literal('DEMO'),
+    url: t.String,
+  } as const),
+);
 
 export type AppConfig = t.Static<typeof AppConfigSchema>;
 export const AppConfigSchema = t.Record({

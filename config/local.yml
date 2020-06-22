@@ -9,24 +9,35 @@ content:
   basePath: ./content
 
 projects:
-  - aboutPath: projects/css-parser.md
-    gitHubUrl: https://github.com/kschat/css-parser
-  - aboutPath: projects/pascal-compiler.md
-    gitHubUrl: https://github.com/kschat/championjs
-  - aboutPath: projects/game-of-life.md
-    gitHubUrl: https://github.com/kschat/game-of-life
-  - aboutPath: projects/trampoline-ts.md
-    gitHubUrl: https://github.com/kschat/trampoline-ts
-  - aboutPath: projects/tf2outpost-prices.md
-    gitHubUrl: https://github.com/kschat/tf2outpost-prices-chrome-extension
-  - aboutPath: projects/dotfiles.md
-    gitHubUrl: https://github.com/kschat/dotfiles
-  - aboutPath: projects/portfolio-site.md
-    gitHubUrl: https://github.com/kschat/portfolio-site-rewrite
-  - aboutPath: projects/no-buzzfeed.md
-    gitHubUrl: https://github.com/kschat/no-buzzfeed
-  - aboutPath: projects/scrum-poker.md
-    gitHubUrl: https://github.com/kschat/scrum-poker
+  - name: CSS Parser
+    button: READ_MORE
+
+  - name: Pascal Compiler
+    button: READ_MORE
+
+  - name: Game of Life
+    button: DEMO
+    url: https://game-of-life.kyleschattler.com
+
+  - name: Trampoline TS
+    button: READ_MORE
+
+  - name: TF2Outpost Prices Chrome Extension
+    button: DEMO
+    url: https://chrome.google.com/webstore/detail/tf2outpost-price-integrat/ndflpbfgklcjpkepbmfgjjancaocpnmp?hl=en-US
+
+  - name: Dotfiles
+    button: READ_MORE
+
+  - name: Personal Website
+    button: READ_MORE
+
+  - name: No BuzzFeed
+    button: READ_MORE
+
+  - name: Scrum Poker
+    button: DEMO
+    url: http://scrumpoker.kyleschattler.com
 
 server:
   port: 8080
