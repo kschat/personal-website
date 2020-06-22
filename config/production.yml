@@ -5,7 +5,7 @@ services:
     baseUrl: https://raw.githubusercontent.com/kschat/
 
 content:
-  source: REMOTE
+  source: LOCAL
   basePath: ./content
 
 projects:
