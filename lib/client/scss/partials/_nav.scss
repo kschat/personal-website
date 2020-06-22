@@ -49,6 +49,10 @@ ul.nav {
     @include transparency(0);
     width: 0;
     height: 0;
+    .avatar-img {
+      width: 0;
+      height: 0;
+    }
   }
 
   .footer {
