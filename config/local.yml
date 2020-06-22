@@ -9,8 +9,14 @@ content:
   basePath: ./content
 
 projects:
-  - aboutPath: projects/champion.md
+  - aboutPath: projects/css-parser.md
+    gitHubUrl: https://github.com/kschat/css-parser
+  - aboutPath: projects/pascal-compiler.md
     gitHubUrl: https://github.com/kschat/championjs
+  - aboutPath: projects/game-of-life.md
+    gitHubUrl: https://github.com/kschat/game-of-life
+  - aboutPath: projects/trampoline-ts.md
+    gitHubUrl: https://github.com/kschat/trampoline-ts
   - aboutPath: projects/tf2outpost-prices.md
     gitHubUrl: https://github.com/kschat/tf2outpost-prices-chrome-extension
   - aboutPath: projects/dotfiles.md
@@ -19,8 +25,6 @@ projects:
     gitHubUrl: https://github.com/kschat/portfolio-site-rewrite
   - aboutPath: projects/no-buzzfeed.md
     gitHubUrl: https://github.com/kschat/no-buzzfeed
-  - aboutPath: projects/nw-edge-proof-of-concept.md
-    gitHubUrl: https://github.com/kschat/nw-edge-proof-of-concept
   - aboutPath: projects/scrum-poker.md
     gitHubUrl: https://github.com/kschat/scrum-poker
 
