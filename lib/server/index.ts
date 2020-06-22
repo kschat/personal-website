@@ -43,7 +43,7 @@ export const startServer = async (configPath: string) => {
 
   initRoutes(appConfig).forEach((route) => server.route(route));
 
-  server.listen(appConfig.server.port, (error) => {
+  server.listen(appConfig.server.port, '0.0.0.0', (error) => {
     if (error) {
       server.log.error({
         tags: ['server-start', 'error'],
