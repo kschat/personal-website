@@ -30,7 +30,13 @@ export const loadConfig = async (filePath: string) => {
 
   return {
     path: filePath,
-    config,
+    config: {
+      ...config,
+      server: {
+        ...config.server,
+        port: Number(process.env.PORT) || config.server.port,
+      },
+    },
   };
 };
 

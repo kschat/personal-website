@@ -1,0 +1,44 @@
+environment: production
+
+services:
+  github:
+    baseUrl: https://raw.githubusercontent.com/kschat/
+
+content:
+  source: REMOTE
+  basePath: ./content
+
+projects:
+  - name: CSS Parser
+    button: READ_MORE
+
+  - name: Pascal Compiler
+    button: READ_MORE
+
+  - name: Game of Life
+    button: DEMO
+    url: https://game-of-life.kyleschattler.com
+
+  - name: Trampoline TS
+    button: READ_MORE
+
+  - name: TF2Outpost Prices Chrome Extension
+    button: DEMO
+    url: https://chrome.google.com/webstore/detail/tf2outpost-price-integrat/ndflpbfgklcjpkepbmfgjjancaocpnmp?hl=en-US
+
+  - name: Dotfiles
+    button: READ_MORE
+
+  - name: Personal Website
+    button: READ_MORE
+
+  - name: No BuzzFeed
+    button: READ_MORE
+
+  - name: Scrum Poker
+    button: DEMO
+    url: http://scrumpoker.kyleschattler.com
+
+server:
+  port: 8080
+

@@ -1,6 +1,9 @@
 {
   "name": "personal-website",
   "license": "MIT",
+  "engines": {
+    "node": "14.2.x"
+  },
   "scripts": {
     "build": "run-s build:ts copy-to-build build:scss",
     "build:ts": "run-s 'build:ts:*'",
