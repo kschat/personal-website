@@ -16,6 +16,7 @@ export const startServer = async (configPath: string) => {
   const { config: appConfig } = config;
 
   const server = fastify({
+    trustProxy: true,
     logger: {
       prettyPrint: true,
     },
