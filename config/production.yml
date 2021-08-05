@@ -9,6 +9,10 @@ content:
   basePath: ./content
 
 projects:
+  - name: Snake
+    button: DEMO
+    url: https://github.com/kschat/snake/releases
+
   - name: CSS Parser
     button: READ_MORE
 
@@ -22,9 +26,8 @@ projects:
   - name: Trampoline TS
     button: READ_MORE
 
-  - name: TF2Outpost Prices Chrome Extension
-    button: DEMO
-    url: https://chrome.google.com/webstore/detail/tf2outpost-price-integrat/ndflpbfgklcjpkepbmfgjjancaocpnmp?hl=en-US
+  - name: Baby Announcement
+    button: READ_MORE
 
   - name: Dotfiles
     button: READ_MORE
