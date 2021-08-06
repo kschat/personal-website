@@ -13,10 +13,10 @@
 **Walmart Labs: Staff Software Engineer**
 **August 2015 - Present, Philadelphia PA (Remote)**
 * Engineer lead for various customer facing products including Sam's Scan and Go, Walmart Scan and Go, Savings Catcher rewrite, and Walmart Pay
-* As engineer lead I was responsible for working with product to gather requirements, design and architect new features, and prioritizing work
+* As engineer lead I was responsible for working with product to gather requirements, designing and architecting new features, and prioritizing work
 * Wrote and maintained GraphQL and RESTful web services using Node.js and TypeScript
 * Helped with growing the organization by interviewing candidates, participating in hiring panels, and mentoring junior engineers
-* Played a large role in the adoption of TypeScript at Walmart by leading the TypeScript Special Interest Group and hosting weekly meetings
+* Led adoption of TypeScript at Walmart by leading the TypeScript Special Interest Group and hosting weekly meetings
 * Planned and help execute the successful migration of a 17K LoC web service from JavaScript to TypeScript without downtime, regressions, or interruptions to shipping new features
 * Led the Walmart Pay team in writing our first web service using Rust and actix-web
 
