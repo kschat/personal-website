@@ -43,6 +43,7 @@ fi
 copyfiles \
   --up 1 \
   'lib/client/scss/**/*.scss' \
+  'lib/client/images/**/*.jpg' \
   'lib/server/views/**/*.hbs' \
   dist
 
