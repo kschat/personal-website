@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -13,7 +13,7 @@
 
   <body>
     <!--[if lt IE 7]>
-      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" aria-label="Upgrade browser">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
 
     <div class="loading-bar"></div>
@@ -21,26 +21,26 @@
     <section class="side-nav">
       <div class="side-nav-content">
         <div class="avatar">
-          <img class="avatar-img" src="/images/avatar.jpg">
+          <img class="avatar-img" src="/images/avatar.jpg" alt="Photo of Kyle Schattler">
         </div>
 
         <ul class="nav">
           <li>
-            <a id="about" class="nav-button{{#ifEqual page 'about'}} selected{{/ifEqual}}" href="about" data-bypass="true">
+            <a id="about" class="nav-button{{#ifEqual page 'about'}} selected{{/ifEqual}}" href="about" data-bypass="true" aria-label="About">
               <i class="fas fa-address-card"></i>
               <span>About</span>
             </a>
           </li>
 
           <li>
-            <a id="projects" class="nav-button{{#ifEqual page 'projects'}} selected{{/ifEqual}}" href="projects" data-bypass="true">
+            <a id="projects" class="nav-button{{#ifEqual page 'projects'}} selected{{/ifEqual}}" href="projects" data-bypass="true" aria-label="Projects">
               <i class="fas fa-code"></i>
               <span>Projects</span>
             </a>
           </li>
 
           <li>
-            <a id="resume" class="nav-button{{#ifEqual page 'resume'}} selected{{/ifEqual}}" href="resume" data-bypass="true">
+            <a id="resume" class="nav-button{{#ifEqual page 'resume'}} selected{{/ifEqual}}" href="resume" data-bypass="true" aria-label="Resume">
               <i class="fa fa-file-alt"></i>
               <span>Resume</span>
             </a>
@@ -49,11 +49,11 @@
 
         <div class="footer">
           <div class="social-media">
-            <a target="_blank" class="nav-button" href="https://github.com/kschat">
+            <a target="_blank" class="nav-button" href="https://github.com/kschat" aria-label="GitHub profile">
               <i class="fab fa-github"></i>
             </a>
 
-            <a target="_blank" class="nav-button" href="http://linkedin.com/pub/kyle-schattler/5b/73/b53">
+            <a target="_blank" class="nav-button" href="http://linkedin.com/pub/kyle-schattler/5b/73/b53" aria-label="LinkedIn profile">
               <i class="fab fa-linkedin"></i>
             </a>
           </div>
