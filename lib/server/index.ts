@@ -31,11 +31,20 @@ export const startServer = async (configPath: string) => {
 
   handlebars.registerHelper(ifEqual.name, ifEqual);
 
-  server.register(fastifyView, {
+  await server.register(fastifyView, {
     engine: {
       handlebars,
     },
     options: {
+      useHtmlMinifier: require('html-minifier'),
+      htmlMinifierOptions: {
+        removeComments: true,
+        removeCommentsFromCDATA: true,
+        collapseWhitespace: true,
+        collapseBooleanAttributes: true,
+        removeAttributeQuotes: true,
+        removeEmptyAttributes: true
+      },
       partials: {
         meta: 'meta.hbs',
       },
@@ -45,7 +54,9 @@ export const startServer = async (configPath: string) => {
     includeViewExtension: true,
   });
 
-  server.register(fastifyStatic, {
+  await server.register(import('@fastify/compress'));
+
+  await server.register(fastifyStatic, {
     root: joinPath(__dirname, '../client'),
   });
 
