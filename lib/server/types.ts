@@ -1,2 +1,2 @@
-export { Logger } from 'fastify';
+export { FastifyBaseLogger as Logger } from 'fastify';
 

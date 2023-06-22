@@ -1,9 +1,9 @@
 import 'source-map-support/register';
 
 import fastify from 'fastify';
-import pointOfView from 'point-of-view';
+import fastifyView from '@fastify/view';
 import handlebars from 'handlebars';
-import fastifyStatic from 'fastify-static';
+import fastifyStatic from '@fastify/static';
 
 import { join as joinPath, resolve as resolvePath } from 'path';
 import { init as initRoutes } from './routes';
@@ -18,7 +18,9 @@ export const startServer = async (configPath: string) => {
   const server = fastify({
     trustProxy: true,
     logger: {
-      prettyPrint: true,
+      transport: {
+        target: 'pino-pretty',
+      }
     },
   });
 
@@ -29,7 +31,7 @@ export const startServer = async (configPath: string) => {
 
   handlebars.registerHelper(ifEqual.name, ifEqual);
 
-  server.register(pointOfView, {
+  server.register(fastifyView, {
     engine: {
       handlebars,
     },
@@ -44,7 +46,7 @@ export const startServer = async (configPath: string) => {
 
   initRoutes(appConfig).forEach((route) => server.route(route));
 
-  server.listen(appConfig.server.port, '0.0.0.0', (error) => {
+  server.listen({ port: appConfig.server.port, host: '0.0.0.0' }, (error) => {
     if (error) {
       server.log.error({
         tags: ['server-start', 'error'],
