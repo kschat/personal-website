@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# TODO compress in prod
-# --output-style compressed \
 node-sass \
   --source-map true \
   --source-map-embed true \
@@ -9,3 +7,7 @@ node-sass \
   lib/client/scss/main.scss \
   dist/client/css/main.css
 
+csso \
+  --input dist/client/css/main.css \
+  --output dist/client/css/main.min.css \
+  --source-map file
