@@ -9,6 +9,7 @@ section[role='main'] {
 }
 
 .background-panel {
+  display: flex;
   position: relative;
   top: 0;
   left: 0;
@@ -45,6 +46,10 @@ section[role='main'] {
       padding-bottom: 6px;
     }
   }
+}
+
+.center-text {
+  text-align: center;
 }
 
 @media #{$mq-medium} {

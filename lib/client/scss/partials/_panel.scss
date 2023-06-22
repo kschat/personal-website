@@ -4,6 +4,10 @@
 
   @include animation(800ms fadein-top);
 
+  &.panel-center {
+    align-self: center;
+  }
+
   .panel-header {
     color: $textColor;
     background-color: $backgroundColor;

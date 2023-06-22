@@ -1,13 +1,6 @@
-@WalmartLabs Software Engineer living in Philadelphia. I enjoy writing code in
-TypeScript, Kotlin, and Rust, though I'm not very good at the latter.  I'm
-almost always working on RESTful or GraphQL service. I enjoy experimenting with
-new programming languages, and have a deep interest in learning how to write
-compilers in my free time (though, I don't get much of that anymore). I'm a
-masochist so naturally I'm a vim user.
+I'm a Staff Software Engineer based out of Philadelphia, working at Walmart on
+the GraphQL Platform team. I love writing code, especially in Rust and
+TypeScript. I'm a fan of experimenting with new programming languages, and I
+have a deep interest in learning how to write compilers in my free time. I love
+bikes, hate cars, and I'm a big proponent for walkable cities.
 
-When I'm not programming, I enjoy spending time with my family - my wife Kylie,
-and our two dogs, Edward and Oliver. Some of my hobbies include playing disc
-golf, running, riding my bike, and playing video games (I'm a huge fan of
-FromSoftware games, my favorite being Dark Souls 3). Although I'm not very good
-at it, I enjoy making home improvements. It's a lot of fun to learn about
-something that's completely different from programming.
