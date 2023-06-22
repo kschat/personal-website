@@ -1,19 +1,10 @@
-@include keyframes('fadein-left') {
-  from {
-    opacity: 0;
-    left: -100px;
-  }
-  to {
-    opacity: 1;
-    right: 0;
-  }
-}
-
-@include keyframes('fadein') {
-  from {
+@include keyframes('fadein-top') {
+  0% {
+    transform: translateY(-15px);
     opacity: 0;
   }
-  to {
+  100% {
+    transform: translateY(0%);
     opacity: 1;
   }
 }

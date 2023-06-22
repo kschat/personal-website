@@ -9,6 +9,12 @@
     {{>meta}}
 
     <link rel="stylesheet" href="/css/main.min.css" />
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('body')[0].classList.add('loaded');
+      });
+    </script>
   </head>
 
   <body>

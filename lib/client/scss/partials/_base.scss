@@ -3,7 +3,9 @@ section[role='main'] {
   height: 100%;
   background-color: $backgroundColor;
 
-  @include transition(padding-left 0.8s ease);
+  .loaded & {
+    @include transition(padding-left 0.8s ease);
+  }
 }
 
 .background-panel {
@@ -43,10 +45,6 @@ section[role='main'] {
       padding-bottom: 6px;
     }
   }
-}
-
-.fade {
-  @include transition(visibility 0s linear 0.8s, opacity 0.8s ease);
 }
 
 @media #{$mq-medium} {

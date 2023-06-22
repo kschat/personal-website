@@ -1,8 +1,8 @@
 .panel {
   padding-top: $mobilePanelTopPadding;
-
   background-color: $backgroundColor;
-  @include transition(padding-top 0.8s ease);
+
+  @include animation(800ms fadein-top);
 
   .panel-header {
     color: $textColor;
@@ -13,14 +13,18 @@
 
     padding: 2px 24px;
 
-    @include transition(font-size 0.8s ease);
+    .loaded & {
+      @include transition(font-size 0.8s ease);
+    }
   }
 
   .panel-body {
     padding: 8px 24px;
     background-color: $backgroundColor;
 
-    @include transition(font-size 0.8s ease);
+    .loaded & {
+      @include transition(font-size 0.8s ease);
+    }
   }
 }
 
