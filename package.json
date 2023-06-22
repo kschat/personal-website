@@ -6,11 +6,12 @@
   },
   "scripts": {
     "start": "node dist/server/index.js ./config/production.yml",
-    "build": "run-s build:ts copy-to-build build:scss",
+    "build": "run-s build:ts copy-to-build build:scss build:favicon",
     "build:ts": "run-s 'build:ts:*'",
     "build:ts:server": "tsc -p ./tsconfig.server.json",
     "build:ts:client": "tsc -p ./tsconfig.client.json",
     "build:scss": "./scripts/build-scss.sh",
+    "build:favicon": "ts-node ./scripts/favicon-generator.ts",
     "watch:ts": "run-p 'build:ts:* -- --watch'",
     "watch:static": "chokidar 'lib/{client,server}/**/*.{hbs,scss}' -c 'yarn copy-to-build'",
     "watch:scss": "chokidar 'lib/client/**/*.scss' -c 'yarn build:scss'",
@@ -24,6 +25,7 @@
     "@fortawesome/fontawesome-free": "^6.4.0",
     "@ts-stack/markdown": "^1.0.0",
     "fastify": "^4.18.0",
+    "favicons": "^7.1.3",
     "got": "^11.1.4",
     "handlebars": "^4.7.6",
     "normalize.css": "^8.0.1",
@@ -36,9 +38,11 @@
     "@types/node": "^20.3.1",
     "chokidar-cli": "^3.0.0",
     "copyfiles": "^2.1.1",
+    "mkdirp": "^3.0.1",
     "node-sass": "^9.0.0",
     "nodemon": "^2.0.4",
     "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.1",
     "typescript": "^5.1.3"
   }
 }

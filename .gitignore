@@ -1,6 +1,7 @@
 node_modules/
 dist/
 lib/client/scss/vendor
+lib/client/images/favicon
 .DS_Store
 logs
 *.log

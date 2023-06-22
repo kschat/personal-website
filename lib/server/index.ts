@@ -35,6 +35,11 @@ export const startServer = async (configPath: string) => {
     engine: {
       handlebars,
     },
+    options: {
+      partials: {
+        meta: 'meta.hbs',
+      },
+    },
     templates: joinPath(__dirname, 'views'),
     layout: 'layouts/main',
     includeViewExtension: true,
