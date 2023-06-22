@@ -19,7 +19,7 @@
     "postinstall": "yarn run build"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@fortawesome/fontawesome-free": "^6.4.0",
     "@ts-stack/markdown": "^1.0.0",
     "fastify": "^2.14.1",
     "fastify-static": "^2.7.0",
@@ -28,17 +28,17 @@
     "normalize.css": "^8.0.1",
     "pino-pretty": "^4.0.0",
     "point-of-view": "^3.8.0",
-    "runtypes": "^4.2.0",
+    "runtypes": "^6.7.0",
     "source-map-support": "^0.5.13",
-    "yaml": "^1.10.0"
+    "yaml": "^2.3.1"
   },
   "devDependencies": {
-    "@types/node": "^14.0.1",
-    "chokidar-cli": "^2.0.0",
+    "@types/node": "^20.3.1",
+    "chokidar-cli": "^3.0.0",
     "copyfiles": "^2.1.1",
     "node-sass": "^9.0.0",
     "nodemon": "^2.0.4",
     "npm-run-all": "^4.1.5",
-    "typescript": "^3.9.2"
+    "typescript": "^5.1.3"
   }
 }

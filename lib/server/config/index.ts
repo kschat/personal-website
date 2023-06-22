@@ -7,7 +7,8 @@ const parseYaml = (value: string): unknown => {
   try {
     return yaml.parse(value);
   } catch (error) {
-    throw new ConfigError(`Failed to parse YAML file:\n${error.message}`);
+    const { message } = error as Error;
+    throw new ConfigError(`Failed to parse YAML file:\n${message}`);
   }
 };
 
@@ -15,8 +16,9 @@ const validate = (value: unknown) => {
   try {
     return AppConfigSchema.check(value);
   } catch (error) {
+    const { message } = error as Error;
     throw new ConfigError(
-      `Invalid config:\n${JSON.stringify(value, undefined, 2)}\n\n${error.message}`,
+      `Invalid config:\n${JSON.stringify(value, undefined, 2)}\n\n${message}`,
     );
   }
 };
