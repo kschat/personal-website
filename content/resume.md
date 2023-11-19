@@ -10,7 +10,7 @@
 
 *Professional Experience*
 
-**Walmart Labs: Staff Software Engineer**
+**Walmart Labs: Principal Software Engineer**
 **August 2015 - Present, Philadelphia PA (Remote)**
 * Engineer lead for various customer facing products including Sam's Scan and Go, Walmart Scan and Go, Savings Catcher rewrite, and Walmart Pay
 * As engineer lead I was responsible for working with product to gather requirements, designing and architecting new features, and prioritizing work
