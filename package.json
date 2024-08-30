@@ -6,7 +6,7 @@
   },
   "scripts": {
     "start": "node dist/server/index.js ./config/production.yml",
-    "build": "run-s build:ts copy-to-build build:scss build:favicon",
+    "build": "run-s build:ts build:scss build:favicon copy-to-build",
     "build:ts": "run-s 'build:ts:*'",
     "build:ts:server": "tsc -p ./tsconfig.server.json",
     "build:ts:client": "tsc -p ./tsconfig.client.json",
